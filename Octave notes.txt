@@ -1,0 +1,253 @@
+# to get help on any command use below commands.
+help command or doc command or 
+q - to exit help mode
+# Matrix:
+A=[1,2;3,4;5,6;7,8]
+str ='RK'
+data.A='A';
+data.B=1.3;
+data.C=100;
+# To list objects in a workspace
+who
+# To list objects in a workspace nd their complete details
+whos
+# To format the display format
+format short==Fixed point format with 5 digits 
+format long==Fixed point format with 15 digits
+format short e==Floating point format, 5 digits 
+format long e==Floating point format, 15 digits
+format short g==Best of fixed or floating point with 5 digits 
+format long g==Best of fixed or floating point with 15 digits 
+
+
+# Numeric formats
+ceil(X)
+floor(X
+fix(X)-ROund towards zero
+round(X)
+
+# Matrix creation
+# To delimit rows, use semicolon
+# To delimit columns, use comma or space
+A = [8 2 1;3 -1 4;7 6 -5] 
+A = [8,2,1;3,-1,4;7,6,-5]
+
+# T0 cbind two same dimension matrices
+A=[1 2 3;4 5 6]
+B=[11;22]
+C=[A B]
+
+# T0 rbind two same dimension matrices
+D=[A;[11 22 33]]
+
+# Indexing
+aij = A(i,j)- Get an element
+r = A(i,:) - Get a row
+c = A(:,j)
+D = A(i:k,l:m) -Get a submetrix
+
+# Indexing on vectors
+d1 = [1 2 3 4 5 6 7]
+d1(3:6)
+
+# To create a seqience
+syntax: start:step:stop
+ex1: 1:2:10
+out: 1 3 5 7 9
+ex2: 10:-2:1
+out: 10 8 6 4 2
+
+# linspace - to careate a seqience between numbers
+
+# Cahnge values in a mtrix:
+A=[1 2 3 4; 5 6 7 8; 9 10 11 12; 13 14 15 16; 17 18 19 20]
+A(2,:)=2
+
+# TO delete a column or row you use []
+A(1,;)=[]- IT deletes first row
+A(:,1:2:3)=[] - It deletes 1 and 3 columns
+
+# Size-TO ge the size of a matrix
+size(A)-TO get n rows and n columns
+size(A,1)- TO get n rows
+size(A,2) -To get n columns
+length(A) - To get whatever is bigger
+numel(A - TO get number of elements
+isempty(A) -TO check wheterh it is an empty or not.
+
+
+# A' -is to transpose a matrix.
+# inv(A) -is to calculate inverse of a matrix
+# det(A) - Is to calculate determinant of A
+# eig(A) -is to calculate eigen values decomposition
+# eye(A) -is to get idempotent matrix
+# svd(A) -singular value decomposion
+
+# Element-wise operation
+s = X.+X # element wise addition
+p = x.*X # element wise multiplication
+q = x./x # element wise division
+e = x.^3 # element wise exponent
+
+# basic functions
+sum
+cumsum
+prod
+cumprod
+diff
+mean
+std
+min
+max
+sort(a,'ascend')
+sort(a,'descend')
+find(A==1)/find(A==6)
+# matrices
+A=zeros(m,n)
+B=ones(m,n)
+C=eye(n)
+D=diag(A)
+# magic- is to create a n*n matrix with rowsums and column sums should be equal.
+
+R =rand(m,n) # createa a random numbers with uniformly dist. by m rows and ncolumns.
+N=randn(m,n) # createa a random numbers with normal dist. by m rows and ncolumns.
+
+# string functions
+strcat()
+s = strcat('At step ',int2str(k),',p=',num2str(p,4))
+s = At step 56, p = 0.142
+
+# integer to string
+int2str
+# Number to sting
+num2str
+# to display a text
+sprintf
+
+# COntrol structures
+if condition, 
+	then-body;
+elseif condition,
+	elseif-body;
+else 
+	else-bidy;
+end
+
+# While statement
+while condition,
+	body;
+end
+
+# for statements
+for var=expression,
+	body;
+end
+
+# Interupting and continuining loops
+break
+continue
+
+#Comparison operator
+any(v)- Returns 1 of any element returns non-zero.
+all(v)-returns 1 if all the elements are non-zero.
+
+# Comparison operator
+<
+>
+<=
+>=
+==
+~=
+
+# Functions
+function [ret-var]=name(arg-list)
+	body
+end
+
+ret-vat: is a comma-separated list of output arguments. Note that  ret-var  is a vector enclosed in square brackets [arg1, arg2, ..., argm]
+arg-list: is a comma-separated list of input arguments arg1, arg2, ..., argn 
+
+
+Ex: 
+function[mu,sigma] =calcmoments(data)
+	mu = mean(data)
+	sigma = std(data)
+end
+
+
+# Setting paths
+path -it print search path list
+addpath('dir') -to prepend the specified directory to the path list.
+rmpath('dir') - ro remove the specified path from the path list.
+savepath - it saves the current path list.
+
+
+# Save objects
+save my_vars.mat
+# load objects
+load my_vars.mat
+load('data.txt')
+
+# Reading files
+textread-Read formated test from file
+fscanf- Read formatted text from file
+fgetl-Read line from file
+fread-Read binary datafile
+
+#Read/write images
+imread-Read images from file
+imwrite- writes images to the file
+
+# Cleaning up.
+clear A- Clear variable A-
+clear frame* -Clears all the variables which starts with frame
+clear - clears all the variables
+clear all - Clear everything
+close - close foreground figure window
+close all- close all open figure windows
+clc clear command window
+disp(A)-It displays a value or variable
+
+
+#MISC
+pwd--Present working directory
+ls -List directory. See also dir
+dir -works as ls
+cd -change directory
+mkdir=make directory
+rmdir- Remove directory
+movefile -Move file
+copyfile -Copy file
+
+# to set the random seeds
+rand('seed',value)
+rand(5,5)
+
+rand('seed',value)
+rand(5,5)
+
+#Practice
+ex1:
+
+[A B]=size(rand(5,7))
+A=5
+B=7
+
+#vectorization
+# Calculating squares to the given values.
+a=1:10
+b=[]
+for i=1:10,
+  b(i)=i**2;
+end;
+
+# Creating matrix with uniform distribution.
+a=[]
+for i=1:5,
+  a(i,:)=rand(1,10);
+end;
+
+
+
+
+
